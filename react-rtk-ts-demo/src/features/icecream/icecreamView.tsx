@@ -1,11 +1,12 @@
-import React from "react"
-import { useSelector, useDispatch } from "react-redux"
+import { useAppDispatch, useAppSelector } from "../../app/hooks"
 import { ordered, restocked } from "./icecreamSlice"
 import { useState } from "react"
 
 const icecreamView = () => {
-  const numOfIcecreams = useSelector((state) => state.icecream.numOfIcecreams)
-  const dispatch = useDispatch()
+  const numOfIcecreams = useAppSelector(
+    (state) => state.icecream.numOfIcecreams
+  )
+  const dispatch = useAppDispatch()
   const [value, setValue] = useState(1)
   return (
     <div>

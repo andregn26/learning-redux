@@ -1,12 +1,12 @@
 import React from "react"
 import { useEffect } from "react"
-import { useDispatch, useSelector } from "react-redux"
+import { useAppDispatch, useAppSelector } from "../../app/hooks"
 import { fetchUsers } from "./userSlice"
 
 const userView = () => {
-  const user = useSelector((state) => state.user)
+  const user = useAppSelector((state) => state.user)
   console.log("🚀 ~ file: userView.jsx:8 ~ userView ~ user", user)
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   useEffect(() => {
     dispatch(fetchUsers())
   }, [])
